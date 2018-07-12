@@ -2,14 +2,15 @@
 
 This project is based on MAVEN.
 
-Tools and Technologies:
+# Tools and Technologies:
+
 ~ Selenium Webdriver and Selenium Standalone Server -> Browser testing (the entire web flow)
 
 ~ jUnit -> testing framework
 
 ~ Java -> programming language
 
-Project structure:
+# Project structure:
 -> 'drivers' -> all drivers/browsers required for local run. Example: Firefox, Chrome, InternetExplorer.
 
 -> 'Screenshots' -> the location of screenshots when the test is failed. The screenshot name is a concatenation between the method name and the date when the test failed. Example: testYouAndYourInsuranceElementsPageVisibility_2018.06.05.12.30.31.png
@@ -42,10 +43,14 @@ You can update the urls from 'TestConfig' sheet, by changing the following value
 ~ Browser -> chrome, firefox, ie(for Windows only)
 
 These tests can be run from IDE or from command line(terminal/command prompt).
-How to run tests from command line? You can run the tests locally from command line only if you have set M2_HOME (maven) as an environment variable. (More info: http://www.baeldung.com/install-maven-on-windows-linux-mac)
 
-Commands:
+# How to run tests from command line?
+You can run the tests locally from command line only if you have set M2_HOME (maven) as an environment variable. (More info: http://www.baeldung.com/install-maven-on-windows-linux-mac)
+
+# Commands:
 
 mvn clean verify -> runs all tests
+
 mvn clean verify -Dtest=mvn clean verify -Dtest=home.EndToEndTest -> runs all tests within home package
+
 mvn clean verify -Dtest=home.EndToEndTest#testGenerateHomeQuote_Esure_NoJoint_NoBuildingCover_NoSpecialItem -> runs testGenerateHomeQuote_Esure_NoJoint_NoBuildingCover_NoSpecialItem method from home.EndToEndTest class
