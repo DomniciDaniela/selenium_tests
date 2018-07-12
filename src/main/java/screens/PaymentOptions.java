@@ -94,6 +94,7 @@ public class PaymentOptions {
             Utils.moveToWebElement(owner);
             Utils.clickWebElementJS(owner);
         } else {
+            Thread.sleep(200);
             Utils.clickWebElementAfterWait(owner, 2);
         }
     }

@@ -52,6 +52,9 @@ public class AboutYourCar {
      * Helper method to select 'CarUsage'
      */
     public static void selectCarUsage(String dropdownValue) throws Exception {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("carUsage")));
+
         WebElement  element = driver.findElement(By.id("carUsage"));
         if (ConfigLoad.ConfigLoadVariables.sBrowser.equalsIgnoreCase(TestDataUtils.Browser.SAFARI)) {
             Utils.setDropdownValueSafari(element, dropdownValue);
@@ -141,10 +144,10 @@ public class AboutYourCar {
      * Helper method to click 'Car kept overnight' - No flag
      */
     public static void clickDifferentPostcodeNo() throws Exception {
-       WebElement element = driver.findElement(By.id("differentPostcode_1"));
+       WebElement element = driver.findElement(By.id("label_differentPostcode_1"));
         if (ConfigLoad.ConfigLoadVariables.sResponsiveMode.equalsIgnoreCase(TestDataUtils.Flags.YES) && ConfigLoad.ConfigLoadVariables.sBrowser.equalsIgnoreCase(TestDataUtils.Browser.CHROME)) {
-            Thread.sleep(1000);
-            Utils.scrollIntoViewJS(element);
+            Thread.sleep(200);
+            Utils.moveToWebElement(element);
             Utils.clickWebElementJS(element);
         } else {
             Utils.clickWebElementAfterWait(element, 3);
