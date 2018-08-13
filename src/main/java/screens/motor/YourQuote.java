@@ -63,7 +63,7 @@ public class YourQuote {
      * Helper method to validate if MLP popup si displayed
      */
     public static boolean isMLPPopupDisplayed() throws Exception {
-        WebElement mlp = driver.findElement(By.id("callCentreUpSellModal-panel_c"));
+        WebElement mlp = driver.findElement(By.id("mlpDialog"));
         return Utils.isWebElementIsDisplayed(mlp, 2);
     }
 }

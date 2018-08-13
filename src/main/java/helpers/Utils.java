@@ -180,8 +180,14 @@ public class Utils {
      * Helper method to click 'No Thanks' button
      */
     public static void clickNoThanks() throws Exception {
-        WebElement button = driver.findElement(By.id("noThanksButton"));
-        clickWebElementJS(button);
+        WebElement button;
+        try {
+          button  = driver.findElement(By.id("noThanksButton"));
+            clickWebElementJS(button);
+        } catch (Exception e) {
+            button = driver.findElement(By.id("mlp_no_thanks"));
+            clickWebElementJS(button);
+        }
     }
 
     /**
